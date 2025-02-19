@@ -15,19 +15,23 @@
 package yaml
 
 import (
+	"reflect"
 	"testing"
 
 	"github.com/katydid/parser-go/parser/debug"
 )
 
-func testYaml(t *testing.T, s string, output debug.Nodes) {
+func testYaml(t *testing.T, s string, want debug.Nodes) {
 	p := NewYamlParser()
 	if err := p.Init([]byte(s)); err != nil {
 		t.Fatal(err)
 	}
-	m := debug.Walk(p)
-	if !m.Equal(output) {
-		t.Fatalf("expected %s but got %s", output, m)
+	got, err := debug.Parse(p)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !reflect.DeepEqual(got, want) {
+		t.Fatalf("expected %s but got %s", want, got)
 	}
 }
 

@@ -360,7 +360,7 @@ func (s *yamlParser) String() (string, error) {
 		s := strings.TrimSpace(string(v))
 		if len(s) == 0 {
 			// for nulls
-			return "", parser.ErrNotString
+			return "<nil>", nil
 		}
 		return strings.TrimSpace(string(v)), nil
 	}
