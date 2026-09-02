@@ -2,7 +2,7 @@
 
 Parser for Yaml in Go.
 
-The Parser uses an outdated interface and needs to be updated to the new interface, see https://git.katydid.org.za/parser-go
+The Parser implements an outdated interface and needs to be updated to the new interface, see https://git.katydid.org.za/parser-go
 
 ## Known Issues
 
