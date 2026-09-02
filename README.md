@@ -2,6 +2,8 @@
 
 Parser for Yaml in Go.
 
+The Parser uses an outdated interface and needs to be updated to the new interface, see https://git.katydid.org.za/parser-go
+
 ## Known Issues
 
 The YAML parser implementation is in progress and has the following knwown limitations
